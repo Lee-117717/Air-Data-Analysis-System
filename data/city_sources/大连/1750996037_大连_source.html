@@ -1,0 +1,379 @@
+<html><head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>大连空气质量指数AQI_PM2.5月统计历史数据_中国空气质量在线监测分析平台历史数据</title>
+<meta name="keywords" content="大连PM2.5历史数据,大连PM2.5历史数据查询,大连空气质量指数历史数据查询,中国空气质量在线监测分析平台">
+<meta name="description" content="大连PM2.5月历史数据,大连PM2.5月历史数据查询,大连空气质量指数历史数据查询,中国空气质量在线监测分析平台历史数据">
+<meta http-equiv="refresh" content="300">
+<link rel="shortcut icon" href="../resource/icons/logo.png">
+<link rel="stylesheet" type="text/css" href="resource/css/bootstrap.css">
+<link rel="stylesheet" href="resource/css/style.css?v=1.1" type="text/css">
+</head>
+<body id="body" style="">
+
+<!-- Fixed navbar -->
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container" style="padding:0px 0px 0 10px">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/historydata/" style="padding:0px"><img src="resource/img/logo.png" width="148px" height="50px"></a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="/historydata/">空气质量</a></li>
+        <!-- <li><a href="weather.php" >历史天气</a></li> -->
+        <li><a href="../" target="_blank">分析平台</a></li>
+        <li><a href="https://map.zq12369.com" target="_blank">风场地图</a></li>
+<!--         <li><a href="http://blog.aqistudy.cn" target="_blank">官方博客</a></li> -->
+        <!-- <li><a href="http://bbs.aqistudy.cn" target="_blank">交流论坛</a></li> -->
+        <li><a href="weixin.php">微信平台</a></li>
+        <li><a href="sponsor.php">友情赞助</a></li>
+        <li><a href="about.php">关于</a></li>
+      </ul>
+      <marquee direction="left" behavior="scroll" scrollamount="3" scrolldelay="0" onmouseout="this.start()" onmouseover="this.stop()" style="float:left;width:260px;margin-top: 15px;">
+        <a href="https://map.zq12369.com/" style="color:red;font-size:14px;" target="_blank">点击访问全国风场气象辅合污染地图<img src="https://m.zq12369.com/resource/img/new.gif" height="14px"></a>
+        
+      </marquee>
+      <form class="navbar-form navbar-right" role="search" action="monthdata.php">
+         <div class="form-group">
+            <input type="text" class="form-control" placeholder="请输入要查询的城市名" name="city" value="大连">
+         </div>
+         <button type="submit" class="btn btn-default">提交</button>
+      </form>
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
+
+  <div id="myCarousel" class="carousel slide hidden-xs" data-ride="carousel">
+     <!-- 轮播（Carousel）指标 -->
+     <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+     </ol>
+     <!-- 轮播（Carousel）项目 -->
+     <div class="carousel-inner">
+        <div class="item next left" style="height:300px;">
+           <img src="resource/img/air2.jpg" alt="Second slide" width="100%">
+           <div class="carousel-caption biaoyu">科学发展，生态优先，环境改善，环保先行！</div>
+        </div>
+        <div class="item " style="height:300px;">
+           <img src="resource/img/air1.jpg" alt="First slide" width="100%">
+           <div class="carousel-caption biaoyu">同呼吸、共担当、齐行动，改善空气质量，从我做起！</div>
+        </div>
+        <div class="item active left" style="height:300px;">
+           <img src="resource/img/air3.jpg" alt="Third slide" width="100%">
+           <div class="carousel-caption biaoyu">生命来源自然，健康来自环保！</div>
+        </div>
+     </div>
+     <!-- 轮播（Carousel）导航 -->
+     <a class="carousel-control left" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+     <a class="carousel-control right" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+  </div>
+<h2 id="title">大连空气质量指数月统计历史数据</h2>
+<div class="container">
+  <div class="row">
+  <div class="col-lg-9 col-md-8 col-xs-12 col-sm-8" style="padding:0 5px">
+  <table width="100%" class="table table-condensed table-striped table-responsive table-bordered table-hover" style="margin-bottom:6px">
+      <tbody><tr height="40px">
+                    <th style="background:#d9edf7;display:none">SO2</th>
+                    <th style="background:#d9edf7;display:none">SO2</th>
+                    <th style="background:#d9edf7;display:none">SO2</th>
+                    <th style="background:#d9edf7;display:none">PM2.5</th>
+                <th style="background:#d9edf7">月份</th>
+        <th style="background:#d9edf7">AQI</th>
+                    <th style="background:#d9edf7;" class="hidden-xs hidden-md hidden-sm hidden-lg">PM10</th>
+                <th style="background:#d9edf7" class="hidden-xs">范围</th>
+        <th style="background:#d9edf7" width="80px">质量等级</th>
+        <th style="background:#d9edf7">PM2.5</th>
+        <th style="background:#d9edf7">PM10</th>
+                    <th style="background:#d9edf7;" class="hidden-xs hidden-sm hidden-md hidden-lg">PM10</th>
+                    <th style="background:#d9edf7;" class="hidden">CO</th>
+                    <th style="background:#d9edf7;" class="hidden-xs hidden-sm hidden-md hidden-lg">SO2</th>
+                    <th style="background:#d9edf7;" class="hidden-xs hidden-md hidden-sm hidden-lg">PM2.5</th>
+        
+                    <th style="background:#d9edf7;" class="hidden-xs">CO</th>
+                    <th style="background:#d9edf7;" class="hidden-xs">SO2</th>
+                    <th style="background:#d9edf7;" class="hidden-xs">NO2</th>
+                            <th style="background:#d9edf7;" class="hidden-xs hidden-md hidden-sm hidden-lg">AQI</th>
+                <th style="background:#d9edf7" class="hidden-xs">O3</th>
+      </tr>
+  </tbody></table>
+  <span style="color:gray;font-size:12px">数值单位：μg/m3(CO为mg/m3)<br></span>
+  <span style="color:gray;font-size:12px">每月AQI数据和PM2.5浓度数据是本站根据当天环保总站每小时数据计算求平均的结果，存在丢数据场景，仅供参考。如果数据无法正常显示，请尝试使用<a href="https://www.baidu.com/s?ie=utf-8&amp;f=8&amp;rsv_bp=0&amp;rsv_idx=1&amp;tn=baidu&amp;wd=chrome&amp;rsv_pq=b4d98b8400009b26&amp;rsv_t=f897l1tNmVRDDbamciZKvfBjKCHNJJYE3cj9vlWycNYtZeFznk5l8XCwW%2FM&amp;rqlang=cn&amp;rsv_enter=1&amp;rsv_sug3=2&amp;rsv_sug1=2&amp;rsv_sug7=100" target="_blank">chrome</a>浏览器。</span>
+  <div class="panel panel-info">
+	<div style="padding-right:20px;">
+	  <div id="container" style="min-width:200px;height:380px;"></div>
+	  <div id="containerlevel" style="min-width:200px;height:380px;"></div>
+	</div>
+  </div>
+  </div>
+  <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12" style="padding:0 5px">
+      <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title" style="text-align:center">大连月统计数据</h3>
+      </div>
+      <div>
+        <div id="piecontainer" style="height:200px;"></div>
+      </div>
+     </div>
+
+     <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title" style="text-align:center">大连其他月份历史数据</h3>
+        </div>
+        <div style="padding:10px 10px 10px 10px">
+           <ul class="unstyled1">
+             <li><a href="daydata.php?city=大连&amp;month=201312">2013年12月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201401">2014年01月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201402">2014年02月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201403">2014年03月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201404">2014年04月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201405">2014年05月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201406">2014年06月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201407">2014年07月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201408">2014年08月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201409">2014年09月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201410">2014年10月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201411">2014年11月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201412">2014年12月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201501">2015年01月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201502">2015年02月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201503">2015年03月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201504">2015年04月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201505">2015年05月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201506">2015年06月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201507">2015年07月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201508">2015年08月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201509">2015年09月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201510">2015年10月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201511">2015年11月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201512">2015年12月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201601">2016年01月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201602">2016年02月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201603">2016年03月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201604">2016年04月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201605">2016年05月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201606">2016年06月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201607">2016年07月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201608">2016年08月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201609">2016年09月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201610">2016年10月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201611">2016年11月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201612">2016年12月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201701">2017年01月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201702">2017年02月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201703">2017年03月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201704">2017年04月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201705">2017年05月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201706">2017年06月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201707">2017年07月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201708">2017年08月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201709">2017年09月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201710">2017年10月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201711">2017年11月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201712">2017年12月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201801">2018年01月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201802">2018年02月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201803">2018年03月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201804">2018年04月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201805">2018年05月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201806">2018年06月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201807">2018年07月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201808">2018年08月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201809">2018年09月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201810">2018年10月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201811">2018年11月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201812">2018年12月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201901">2019年01月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201902">2019年02月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201903">2019年03月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201904">2019年04月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201905">2019年05月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201906">2019年06月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201907">2019年07月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201908">2019年08月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201909">2019年09月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201910">2019年10月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201911">2019年11月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=201912">2019年12月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202001">2020年01月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202002">2020年02月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202003">2020年03月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202004">2020年04月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202005">2020年05月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202006">2020年06月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202007">2020年07月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202008">2020年08月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202009">2020年09月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202010">2020年10月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202011">2020年11月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202012">2020年12月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202101">2021年01月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202102">2021年02月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202103">2021年03月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202104">2021年04月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202105">2021年05月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202106">2021年06月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202107">2021年07月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202108">2021年08月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202109">2021年09月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202110">2021年10月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202111">2021年11月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202112">2021年12月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202201">2022年01月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202202">2022年02月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202203">2022年03月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202204">2022年04月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202205">2022年05月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202206">2022年06月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202207">2022年07月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202208">2022年08月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202209">2022年09月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202210">2022年10月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202211">2022年11月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202212">2022年12月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202301">2023年01月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202302">2023年02月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202303">2023年03月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202304">2023年04月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202305">2023年05月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202306">2023年06月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202307">2023年07月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202308">2023年08月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202309">2023年09月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202310">2023年10月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202311">2023年11月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202312">2023年12月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202401">2024年01月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202402">2024年02月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202403">2024年03月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202404">2024年04月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202405">2024年05月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202406">2024年06月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202407">2024年07月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202408">2024年08月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202409">2024年09月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202410">2024年10月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202411">2024年11月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202412">2024年12月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202501">2025年01月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202502">2025年02月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202503">2025年03月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202504">2025年04月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202505">2025年05月</a></li>
+                          <li><a href="daydata.php?city=大连&amp;month=202506">2025年06月</a></li>
+                        </ul>
+        </div>
+     </div>
+
+     <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title" style="text-align:center">全国主要城市历史数据</h3>
+      </div>
+      <div style="padding:10px 10px 0 10px">
+         <ul class="unstyled">
+            <li><a href="monthdata.php?city=北京">北京</a></li>
+            <li><a href="monthdata.php?city=上海">上海</a></li>
+            <li><a href="monthdata.php?city=天津">天津</a></li>
+            <li><a href="monthdata.php?city=重庆">重庆</a></li>
+            <li><a href="monthdata.php?city=杭州">杭州</a></li>
+            <li><a href="monthdata.php?city=哈尔滨">哈尔滨</a></li>
+            <li><a href="monthdata.php?city=长春">长春</a></li>
+            <li><a href="monthdata.php?city=沈阳">沈阳</a></li>
+            <li><a href="monthdata.php?city=石家庄">石家庄</a></li>
+            <li><a href="monthdata.php?city=太原">太原</a></li>
+            <li><a href="monthdata.php?city=西安">西安</a></li>
+            <li><a href="monthdata.php?city=济南">济南</a></li>
+            <li><a href="monthdata.php?city=乌鲁木齐">乌鲁木齐</a></li>
+            <li><a href="monthdata.php?city=拉萨">拉萨</a></li>
+            <li><a href="monthdata.php?city=西宁">西宁</a></li>
+            <li><a href="monthdata.php?city=兰州">兰州</a></li>
+            <li><a href="monthdata.php?city=银川">银川</a></li>
+            <li><a href="monthdata.php?city=郑州">郑州</a></li>
+            <li><a href="monthdata.php?city=南京">南京</a></li>
+            <li><a href="monthdata.php?city=武汉">武汉</a></li>
+            <li><a href="monthdata.php?city=合肥">合肥</a></li>
+            <li><a href="monthdata.php?city=福州">福州</a></li>
+            <li><a href="monthdata.php?city=南昌">南昌</a></li>
+            <li><a href="monthdata.php?city=长沙">长沙</a></li>
+            <li><a href="monthdata.php?city=贵阳">贵阳</a></li>
+            <li><a href="monthdata.php?city=成都">成都</a></li>
+            <li><a href="monthdata.php?city=广州">广州</a></li>
+            <li><a href="monthdata.php?city=昆明">昆明</a></li>
+            <li><a href="monthdata.php?city=南宁">南宁</a></li>
+            <li><a href="monthdata.php?city=深圳">深圳</a></li>
+        </ul>
+      </div>
+     </div>
+
+     <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title" style="text-align:center">微信公众平台</h3>
+      </div>
+      <div style="padding:10px 10px 10px 10px">
+         <a href="weixin.php"><img src="https://www.zq12369.com/resource/img/health/weixin/zhenqiweixin.jpg" width="100%" alt="真气环保二维码"></a>
+      </div>
+     </div>
+
+  </div>
+  </div>
+  
+<br>
+<hr style="margin-bottom:5px">
+<div class="container">
+	<div class="row link">
+	    <div class="col-sm-6" style="padding:0px">
+		© 2013-2025 <a href="#" style="color:#333">aqistudy.cn</a> 版权所有 <a href="https://beian.miit.gov.cn" style="color:#333" target="_blank">浙ICP备15007754号-1</a> <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33011802001982" style="color:#333">浙公网安备33011802001982号</a>
+		<script src="https://hm.baidu.com/hm.js?6088e7f72f5a363447d4bafe03026db8"></script><script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?6088e7f72f5a363447d4bafe03026db8";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+		</div>
+
+    <div style="position: fixed; right: 5px; top:300px;text-align: center">
+      <img src="/historydata/resource/img/sxwxgroup.jpg?v=1.1" width="150px"><br>
+      欢迎扫描二维码体验<br>数象环保AI小助手
+    </div>
+		<div class="col-sm-6" style="text-align:right;padding:0px">
+		<a href="https://www.aqistudy.cn/" target="_blank">分析平台</a>|
+		<a href="https://www.aqistudy.cn/historydata/">历史数据</a>|
+		<a href="https://www.zq12369.com/" target="_blank" style="display: none">真气网</a>|
+    <a href="https://map.zq12369.com/" target="_blank">风场地图</a>|
+		<a href="weixin.php">微信平台</a>|
+		<a href="sponsor.php">友情赞助</a>|
+		<a href="about.php">关于平台</a>
+    <div style="display: none">
+      <a href="https://www.aichpoem.net" target="_blank">诗三百AI写诗</a>
+    </div>
+		</div>
+	</div>
+</div></div>
+<script type="text/javascript" src="resource/js/jquery.min.js?v=1.11"></script>
+<script type="text/javascript" src="resource/js/de5CQkNmdaJwo.min.js?t=1695882361"></script>
+<script type="text/javascript" src="resource/highcharts/highcharts.js"></script>
+<script type="text/javascript" src="resource/highcharts/highcharts-more.js"></script>
+<script type="text/javascript">
+
+
+eval(dqf3PsvG9U(`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`));
+
+
+eval(dU6tPALZ40l(`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`));
+
+
+</script>
+
+</body></html>
