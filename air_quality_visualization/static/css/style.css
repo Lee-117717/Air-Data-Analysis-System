@@ -1,0 +1,391 @@
+/* 基础重置与变量定义 */
+:root {
+	/* 颜色系统 */
+	--primary-color: #FF7E00;
+	--primary-light: #FFB74D;
+	--primary-dark: #E65100;
+	--secondary-color: #488AFE;
+	--secondary-light: #8AB4F8;
+	--text-primary: #333;
+	--text-secondary: #666;
+	--text-tertiary: #999;
+	--bg-light: #FFF9E3;
+	--bg-white: #fff;
+	--bg-gray: #f8f9fa;
+	--bg-dark: #2C3E50;
+	--shadow-light: 0 4px 12px rgba(0, 0, 0, 0.08);
+	--shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
+	--border-radius: 12px;
+
+	/* 字体系统 */
+	--font-main: "Microsoft YaHei", sans-serif;
+	--font-size-h1: clamp(1.5rem, 3vw, 1.8rem);
+	--font-size-h2: clamp(1.1rem, 2vw, 1.2rem);
+	--font-size-h3: clamp(0.9rem, 1.5vw, 1rem);
+	--font-size-body: 1rem;
+	--font-size-small: 0.9rem;
+
+	/* 动画与过渡 */
+	--transition-fast: 0.2s ease;
+	--transition-medium: 0.3s ease;
+	--transition-slow: 0.5s ease;
+}
+
+/* 基础重置 */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: var(--bg-light);
+	line-height: 1.6;
+	padding: 1rem;
+	font-family: var(--font-main);
+	color: var(--text-primary);
+	overflow-x: hidden;
+}
+
+/* 容器与布局 */
+.container {
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 0 1rem;
+}
+
+/* 标题样式 */
+.title-center {
+	font-size: var(--font-size-h1);
+	text-align: center;
+	margin: 2rem 0;
+	letter-spacing: 1px;
+	position: relative;
+	font-weight: 600;
+}
+
+.title-center::after {
+	content: "";
+	position: absolute;
+	bottom: -8px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 60px;
+	height: 3px;
+	background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+	border-radius: 2px;
+	transition: width var(--transition-medium);
+}
+
+.title-center:hover::after {
+	width: 100px;
+}
+
+/* 城市选择器 */
+.selector-section {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 1rem;
+	margin: 2rem 0;
+	align-items: center;
+}
+
+.selector-label {
+	color: var(--text-secondary);
+	font-size: var(--font-size-body);
+	font-weight: 500;
+}
+
+.city-selector {
+	padding: 0.75rem 1.5rem;
+	border: 1px solid #ddd;
+	border-radius: var(--border-radius);
+	background-color: var(--bg-white);
+	cursor: pointer;
+	font-size: var(--font-size-body);
+	appearance: none;
+	background-image: url("data:image/svg+xml;utf8,<svg fill='%23666' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+	background-repeat: no-repeat;
+	background-position: right 0.75rem center;
+	background-size: 1.2rem;
+	padding-right: 3rem;
+	transition: all var(--transition-medium);
+	box-shadow: var(--shadow-light);
+}
+
+.city-selector:focus {
+	border-color: var(--primary-color);
+	outline: none;
+	box-shadow: 0 0 0 3px rgba(255, 126, 0, 0.2);
+	transform: translateY(-2px);
+}
+
+.city-selector:hover {
+	box-shadow: var(--shadow-hover);
+}
+
+/* 图表模块 */
+.chart-module {
+	background-color: var(--bg-white);
+	border-radius: var(--border-radius);
+	box-shadow: var(--shadow-light);
+	margin-bottom: 2.5rem;
+	transition: all var(--transition-medium);
+	overflow: hidden;
+	position: relative;
+}
+
+.chart-module::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 4px;
+	background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+.chart-module:hover {
+	transform: translateY(-5px);
+	box-shadow: var(--shadow-hover);
+}
+
+/* 图表标题区 */
+.chart-headers {
+	padding: 1.25rem 1.5rem;
+	text-align: center;
+	background-color: var(--bg-gray);
+	border-bottom: 1px solid #eee;
+	position: relative;
+	/* 为AQI标记提供定位参考 */
+}
+
+.chart-title {
+	font-size: var(--font-size-h2);
+	font-weight: 600;
+	color: var(--text-primary);
+	margin-bottom: 0.5rem;
+	display: inline-block;
+	position: relative;
+}
+
+.chart-title::before {
+	content: "";
+	position: absolute;
+	left: -1rem;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 6px;
+	height: 6px;
+	background-color: var(--primary-color);
+	border-radius: 50%;
+}
+
+.chart-subtitle {
+	font-size: var(--font-size-h3);
+	color: var(--text-secondary);
+	margin: 0;
+}
+
+/* 新增：图表标题容器（用于包裹标题和AQI标记） */
+.chart-title-wrapper {
+	display: inline-flex;
+	align-items: center;
+	position: relative;
+}
+
+/* 新增：AQI标记样式（固定在标题右侧并居中） */
+.chart-aqi-marker {
+	display: inline-flex;
+	align-items: center;
+	margin-left: 10px;
+	font-size: var(--font-size-h3);
+	color: var(--primary-color);
+	font-weight: 500;
+}
+
+/* 图表容器 - 统一滚动容器类名便于维护 */
+.chart-scroll {
+	width: 100%;
+	overflow-x: auto;
+	scroll-behavior: smooth;
+	-webkit-overflow-scrolling: touch;
+	position: relative;
+}
+
+/* 图表容器 - 内层容器（触发ECharts滚动条） */
+.chart-container {
+	min-width: 100%;
+	/* 初始宽度 */
+	position: relative;
+	transition: min-width 0.3s ease;
+}
+
+.chart-loaded .chart-container {
+	min-width: clamp(2000px, 300vw, 5000px);
+	/* 图表加载后设置足够宽度 */
+}
+
+/* 优化滚动条样式 */
+.chart-scroll::-webkit-scrollbar {
+	height: 8px;
+}
+
+.chart-scroll::-webkit-scrollbar-track {
+	background: #f1f1f1;
+	border-radius: 10px;
+	margin: 0 0.5rem;
+}
+
+.chart-scroll::-webkit-scrollbar-thumb {
+	background: #d1d1d1;
+	border-radius: 10px;
+	transition: background var(--transition-medium);
+}
+
+.chart-scroll::-webkit-scrollbar-thumb:hover {
+	background: var(--primary-light);
+}
+
+/* 图表基础样式 - 优化最小宽度计算 */
+.chart {
+	min-width: clamp(4000px, 150vw, 4000px);
+	/* 优化小屏幕下的最小宽度 */
+	height: clamp(300px, 45vw, 450px);
+}
+
+/* 饼图容器 */
+.chart-container-pie {
+	display: flex;
+	justify-content: center;
+	padding: 2rem 0;
+}
+
+.pie-chart {
+	min-width: clamp(300px, 60vw, 800px);
+	height: clamp(300px, 40vw, 450px);
+}
+
+/* 图例固定样式 */
+.fixed-legend {
+	display: flex;
+	justify-content: center;
+	margin-top: 8px;
+	flex-wrap: wrap;
+}
+
+/* 加载提示 */
+.loading-mask {
+	position: fixed;
+	inset: 0;
+	background: rgba(255, 255, 255, 0.95);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 9999;
+	opacity: 0;
+	visibility: hidden;
+	transition: all var(--transition-medium);
+}
+
+.loading-mask.visible {
+	opacity: 1;
+	visibility: visible;
+}
+
+.loading-icon {
+	width: 50px;
+	height: 50px;
+	border: 5px solid #f3f3f3;
+	border-top: 5px solid var(--primary-color);
+	border-radius: 50%;
+	animation: spin 1s linear infinite;
+	margin-bottom: 1rem;
+	box-shadow: 0 0 15px rgba(255, 126, 0, 0.2);
+}
+
+.loading-text {
+	color: var(--text-primary);
+	font-size: 1.1rem;
+	font-weight: 500;
+	letter-spacing: 0.5px;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+	.title-center {
+		font-size: 1.5rem;
+		margin: 1.5rem 0;
+	}
+
+	.selector-section {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.city-selector {
+		width: 100%;
+	}
+
+	.chart-module {
+		margin-bottom: 2rem;
+	}
+
+	.chart,
+	.pie-chart {
+		height: 500px;
+	}
+
+	.chart-headers {
+		padding: 1rem 1.25rem;
+	}
+
+	/* 小屏幕下调整AQI标记布局 */
+	.chart-title-wrapper {
+		flex-direction: column;
+	}
+
+	.chart-aqi-marker {
+		margin-left: 0;
+		margin-top: 5px;
+	}
+}
+
+@media (max-width: 480px) {
+	body {
+		padding: 0.75rem;
+	}
+
+	.container {
+		padding: 0 0.75rem;
+	}
+
+	.chart-module {
+		padding: 1rem;
+		border-radius: 10px;
+	}
+
+	.chart-title {
+		font-size: 1.05rem;
+	}
+
+	.chart-subtitle {
+		font-size: 0.9rem;
+	}
+
+	.chart-scroll::-webkit-scrollbar-track {
+		margin: 0 1rem;
+	}
+}

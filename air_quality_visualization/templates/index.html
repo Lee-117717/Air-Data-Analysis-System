@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>空气质量可视化平台</title>
+		<!-- 引入 ECharts 核心库 -->
+		<script src="/static/js/echarts.min.js"></script>
+		<link rel="stylesheet" href="/static/css/style.css">
+	</head>
+
+	<body>
+		<!-- 加载提示 -->
+		<div id="loading" class="loading-mask">
+			<div class="loading-icon"></div>
+			<div class="loading-text">数据加载中...</div>
+		</div>
+
+		<div class="container">
+			<h1 class="title-center">空气质量可视化平台</h1>
+
+			<!-- 城市选择器 -->
+			<div class="selector-section">
+				<label for="city-select" class="selector-label">选择城市：</label>
+				<select id="city-select" class="city-selector" onchange="loadCityData(this.value)"></select>
+			</div>
+
+			<!-- AQI趋势图模块 -->
+			<div class="chart-module">
+				<div class="chart-headers" id="aqi-trend-headers">
+					<div class="chart-title-container">
+						<h2 class="chart-title">AQI 月度趋势</h2>
+						<span class="chart-aqi-marker">AQI ○</span>
+					</div>
+					<p class="chart-subtitle" id="aqi-trend-subtitle"></p>
+				</div>
+				<div class="chart-scroll">
+					<div class="chart-container">
+						<div id="aqi-trend" class="chart"></div>
+					</div>
+				</div>
+			</div>
+
+			<!-- 其他图表模块 -->
+			<div class="chart-module">
+				<div class="chart-headers" id="aqi-bar-headers">
+					<h2 class="chart-title">月度 AQI 柱状图对比</h2>
+					<p class="chart-subtitle" id="aqi-bar-subtitle"></p>
+				</div>
+				<div class="chart-scroll">
+					<div id="aqi-bar" class="chart"></div>
+				</div>
+			</div>
+
+			<div class="chart-module">
+				<div class="chart-headers" id="pollutant-compare-headers">
+					<h2 class="chart-title">污染物浓度对比</h2>
+					<p class="chart-subtitle" id="pollutant-compare-subtitle"></p>
+				</div>
+				<div class="chart-scroll">
+					<div id="pollutant-compare" class="chart"></div>
+				</div>
+			</div>
+
+			<div class="chart-module">
+				<div class="chart-headers" id="grade-pie-headers">
+					<h2 class="chart-title">空气质量等级分布</h2>
+					<p class="chart-subtitle" id="grade-pie-subtitle"></p>
+				</div>
+				<div class="chart-container-pie">
+					<div id="grade-pie" class="chart pie-chart"></div>
+				</div>
+			</div>
+
+			<!-- 自定义 JS -->
+			<script src="/static/js/charts.js"></script>
+			<script>
+				// 定义全局状态对象，存储应用相关数据
+				const appState = {
+					airData: {}, // 存储各城市空气质量数据，结构需与业务适配
+					currentCity: '', // 当前选中的城市
+				};
+
+				// 模拟空函数，实际应在 charts.js 中完善（若有），这里避免报错
+				function loadRegionData() {
+					return Promise.resolve();
+				}
+
+				function loadCityData(city) {
+					return Promise.resolve();
+				}
+
+				function renderAllCharts() {}
+
+				// 修改 initCharts 函数，移除地图初始化
+				window.initCharts = function(city) {
+					appState.currentCity = city;
+					loadCityData(city).then(() => {
+						renderAllCharts();
+					});
+				};
+
+				function initApp() {
+					document.addEventListener('DOMContentLoaded', () => {
+						loadRegionData()
+							.then(() => {
+								console.log('省份映射数据加载成功');
+								return fetch('/api/cities')
+									.then(res => res.json())
+									.then(data => {
+										console.log('城市列表数据加载成功');
+										const citySelect = document.getElementById('city-select');
+										data.cities.forEach(city => {
+											const option = document.createElement('option');
+											option.value = city;
+											option.textContent = city;
+											citySelect.appendChild(option);
+										});
+										citySelect.value = '北京';
+										window.initCharts('北京');
+									})
+									.catch(err => {
+										console.error('城市列表加载失败:', err);
+										alert('城市数据加载失败，请检查网络');
+										const citySelect = document.getElementById('city-select');
+										['北京', '上海', '广州', '深圳'].forEach(city => {
+											const option = document.createElement('option');
+											option.value = city;
+											option.textContent = city;
+											citySelect.appendChild(option);
+										});
+										citySelect.value = '北京';
+										window.initCharts('北京');
+									});
+							})
+							.catch(err => {
+								console.error('省份映射加载失败:', err);
+								alert('省份数据加载失败');
+								window.initCharts('北京');
+							});
+					});
+				}
+
+				initApp();
+			</script>
+		</div>
+	</body>
+
+</html>
