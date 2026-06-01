@@ -1,0 +1,375 @@
+<html><head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>宁波空气质量指数AQI_PM2.5月统计历史数据_中国空气质量在线监测分析平台历史数据</title>
+<meta name="keywords" content="宁波PM2.5历史数据,宁波PM2.5历史数据查询,宁波空气质量指数历史数据查询,中国空气质量在线监测分析平台">
+<meta name="description" content="宁波PM2.5月历史数据,宁波PM2.5月历史数据查询,宁波空气质量指数历史数据查询,中国空气质量在线监测分析平台历史数据">
+<meta http-equiv="refresh" content="300">
+<link rel="shortcut icon" href="../resource/icons/logo.png">
+<link rel="stylesheet" type="text/css" href="resource/css/bootstrap.css">
+<link rel="stylesheet" href="resource/css/style.css?v=1.1" type="text/css">
+</head>
+<body id="body" style="">
+
+<!-- Fixed navbar -->
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container" style="padding:0px 0px 0 10px">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/historydata/" style="padding:0px"><img src="resource/img/logo.png" width="148px" height="50px"></a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="/historydata/">空气质量</a></li>
+        <!-- <li><a href="weather.php" >历史天气</a></li> -->
+        <li><a href="../" target="_blank">分析平台</a></li>
+        <li><a href="https://map.zq12369.com" target="_blank">风场地图</a></li>
+<!--         <li><a href="http://blog.aqistudy.cn" target="_blank">官方博客</a></li> -->
+        <!-- <li><a href="http://bbs.aqistudy.cn" target="_blank">交流论坛</a></li> -->
+        <li><a href="weixin.php">微信平台</a></li>
+        <li><a href="sponsor.php">友情赞助</a></li>
+        <li><a href="about.php">关于</a></li>
+      </ul>
+      <marquee direction="left" behavior="scroll" scrollamount="3" scrolldelay="0" onmouseout="this.start()" onmouseover="this.stop()" style="float:left;width:260px;margin-top: 15px;">
+        <a href="https://map.zq12369.com/" style="color:red;font-size:14px;" target="_blank">点击访问全国风场气象辅合污染地图<img src="https://m.zq12369.com/resource/img/new.gif" height="14px"></a>
+        
+      </marquee>
+      <form class="navbar-form navbar-right" role="search" action="monthdata.php">
+         <div class="form-group">
+            <input type="text" class="form-control" placeholder="请输入要查询的城市名" name="city" value="宁波">
+         </div>
+         <button type="submit" class="btn btn-default">提交</button>
+      </form>
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
+
+  <div id="myCarousel" class="carousel slide hidden-xs" data-ride="carousel">
+     <!-- 轮播（Carousel）指标 -->
+     <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+     </ol>
+     <!-- 轮播（Carousel）项目 -->
+     <div class="carousel-inner">
+        <div class="item next left" style="height:300px;">
+           <img src="resource/img/air2.jpg" alt="Second slide" width="100%">
+           <div class="carousel-caption biaoyu">科学发展，生态优先，环境改善，环保先行！</div>
+        </div>
+        <div class="item " style="height:300px;">
+           <img src="resource/img/air1.jpg" alt="First slide" width="100%">
+           <div class="carousel-caption biaoyu">同呼吸、共担当、齐行动，改善空气质量，从我做起！</div>
+        </div>
+        <div class="item active left" style="height:300px;">
+           <img src="resource/img/air3.jpg" alt="Third slide" width="100%">
+           <div class="carousel-caption biaoyu">生命来源自然，健康来自环保！</div>
+        </div>
+     </div>
+     <!-- 轮播（Carousel）导航 -->
+     <a class="carousel-control left" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+     <a class="carousel-control right" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+  </div>
+<h2 id="title">宁波空气质量指数月统计历史数据</h2>
+<div class="container">
+  <div class="row">
+  <div class="col-md-8 col-sm-8 col-lg-9 col-xs-12" style="padding:0 4px">
+  <table width="100%" class="table-condensed table-bordered table table-responsive table-striped table-hover" style="margin-bottom:5px">
+      <tbody><tr height="39px">
+                    <th style="background:#d9edf7;display:none">O3</th>
+                    <th style="background:#d9edf7;display:none">O3</th>
+                <th style="background:#d9edf7">月份</th>
+        <th style="background:#d9edf7">AQI</th>
+                    <th style="background:#d9edf7;" class="hidden-xs hidden-sm hidden-md hidden-lg">NO2</th>
+                <th style="background:#d9edf7" class="hidden-xs">范围</th>
+        <th style="background:#d9edf7" width="80px">质量等级</th>
+        <th style="background:#d9edf7">PM2.5</th>
+        <th style="background:#d9edf7">PM10</th>
+                    <th style="background:#d9edf7;" class="hidden-xs hidden-md hidden-sm hidden-lg">PM10</th>
+                    <th style="background:#d9edf7;" class="hidden-xs hidden-lg hidden-md hidden-sm">SO2</th>
+        
+                    <th style="background:#d9edf7;" class="hidden-xs">CO</th>
+                    <th style="background:#d9edf7;" class="hidden-xs">NO2</th>
+                    <th style="background:#d9edf7;" class="hidden-xs">SO2</th>
+                            <th style="background:#d9edf7;" class="hidden-xs hidden-md hidden-sm hidden-lg">O3</th>
+                <th style="background:#d9edf7" class="hidden-xs">O3</th>
+      </tr>
+  </tbody></table>
+  <span style="color:gray;font-size:12px">数值单位：μg/m3(CO为mg/m3)<br></span>
+  <span style="color:gray;font-size:12px">每月AQI数据和PM2.5浓度数据是本站根据当天环保总站每小时数据计算求平均的结果，存在丢数据场景，仅供参考。如果数据无法正常显示，请尝试使用<a href="https://www.baidu.com/s?ie=utf-8&amp;f=8&amp;rsv_bp=0&amp;rsv_idx=1&amp;tn=baidu&amp;wd=chrome&amp;rsv_pq=b4d98b8400009b26&amp;rsv_t=f897l1tNmVRDDbamciZKvfBjKCHNJJYE3cj9vlWycNYtZeFznk5l8XCwW%2FM&amp;rqlang=cn&amp;rsv_enter=1&amp;rsv_sug3=2&amp;rsv_sug1=2&amp;rsv_sug7=100" target="_blank">chrome</a>浏览器。</span>
+  <div class="panel panel-info">
+	<div style="padding-right:20px;">
+	  <div id="container" style="min-width:200px;height:380px;"></div>
+	  <div id="containerlevel" style="min-width:200px;height:380px;"></div>
+	</div>
+  </div>
+  </div>
+  <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12" style="padding:0 5px">
+      <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title" style="text-align:center">宁波月统计数据</h3>
+      </div>
+      <div>
+        <div id="piecontainer" style="height:200px;"></div>
+      </div>
+     </div>
+
+     <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title" style="text-align:center">宁波其他月份历史数据</h3>
+        </div>
+        <div style="padding:10px 10px 10px 10px">
+           <ul class="unstyled1">
+             <li><a href="daydata.php?city=宁波&amp;month=201312">2013年12月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201401">2014年01月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201402">2014年02月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201403">2014年03月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201404">2014年04月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201405">2014年05月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201406">2014年06月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201407">2014年07月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201408">2014年08月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201409">2014年09月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201410">2014年10月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201411">2014年11月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201412">2014年12月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201501">2015年01月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201502">2015年02月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201503">2015年03月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201504">2015年04月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201505">2015年05月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201506">2015年06月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201507">2015年07月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201508">2015年08月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201509">2015年09月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201510">2015年10月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201511">2015年11月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201512">2015年12月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201601">2016年01月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201602">2016年02月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201603">2016年03月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201604">2016年04月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201605">2016年05月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201606">2016年06月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201607">2016年07月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201608">2016年08月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201609">2016年09月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201610">2016年10月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201611">2016年11月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201612">2016年12月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201701">2017年01月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201702">2017年02月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201703">2017年03月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201704">2017年04月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201705">2017年05月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201706">2017年06月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201707">2017年07月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201708">2017年08月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201709">2017年09月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201710">2017年10月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201711">2017年11月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201712">2017年12月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201801">2018年01月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201802">2018年02月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201803">2018年03月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201804">2018年04月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201805">2018年05月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201806">2018年06月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201807">2018年07月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201808">2018年08月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201809">2018年09月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201810">2018年10月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201811">2018年11月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201812">2018年12月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201901">2019年01月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201902">2019年02月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201903">2019年03月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201904">2019年04月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201905">2019年05月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201906">2019年06月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201907">2019年07月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201908">2019年08月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201909">2019年09月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201910">2019年10月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201911">2019年11月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=201912">2019年12月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202001">2020年01月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202002">2020年02月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202003">2020年03月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202004">2020年04月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202005">2020年05月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202006">2020年06月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202007">2020年07月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202008">2020年08月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202009">2020年09月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202010">2020年10月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202011">2020年11月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202012">2020年12月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202101">2021年01月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202102">2021年02月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202103">2021年03月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202104">2021年04月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202105">2021年05月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202106">2021年06月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202107">2021年07月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202108">2021年08月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202109">2021年09月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202110">2021年10月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202111">2021年11月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202112">2021年12月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202201">2022年01月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202202">2022年02月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202203">2022年03月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202204">2022年04月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202205">2022年05月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202206">2022年06月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202207">2022年07月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202208">2022年08月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202209">2022年09月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202210">2022年10月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202211">2022年11月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202212">2022年12月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202301">2023年01月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202302">2023年02月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202303">2023年03月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202304">2023年04月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202305">2023年05月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202306">2023年06月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202307">2023年07月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202308">2023年08月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202309">2023年09月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202310">2023年10月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202311">2023年11月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202312">2023年12月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202401">2024年01月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202402">2024年02月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202403">2024年03月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202404">2024年04月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202405">2024年05月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202406">2024年06月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202407">2024年07月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202408">2024年08月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202409">2024年09月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202410">2024年10月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202411">2024年11月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202412">2024年12月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202501">2025年01月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202502">2025年02月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202503">2025年03月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202504">2025年04月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202505">2025年05月</a></li>
+                          <li><a href="daydata.php?city=宁波&amp;month=202506">2025年06月</a></li>
+                        </ul>
+        </div>
+     </div>
+
+     <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title" style="text-align:center">全国主要城市历史数据</h3>
+      </div>
+      <div style="padding:10px 10px 0 10px">
+         <ul class="unstyled">
+            <li><a href="monthdata.php?city=北京">北京</a></li>
+            <li><a href="monthdata.php?city=上海">上海</a></li>
+            <li><a href="monthdata.php?city=天津">天津</a></li>
+            <li><a href="monthdata.php?city=重庆">重庆</a></li>
+            <li><a href="monthdata.php?city=杭州">杭州</a></li>
+            <li><a href="monthdata.php?city=哈尔滨">哈尔滨</a></li>
+            <li><a href="monthdata.php?city=长春">长春</a></li>
+            <li><a href="monthdata.php?city=沈阳">沈阳</a></li>
+            <li><a href="monthdata.php?city=石家庄">石家庄</a></li>
+            <li><a href="monthdata.php?city=太原">太原</a></li>
+            <li><a href="monthdata.php?city=西安">西安</a></li>
+            <li><a href="monthdata.php?city=济南">济南</a></li>
+            <li><a href="monthdata.php?city=乌鲁木齐">乌鲁木齐</a></li>
+            <li><a href="monthdata.php?city=拉萨">拉萨</a></li>
+            <li><a href="monthdata.php?city=西宁">西宁</a></li>
+            <li><a href="monthdata.php?city=兰州">兰州</a></li>
+            <li><a href="monthdata.php?city=银川">银川</a></li>
+            <li><a href="monthdata.php?city=郑州">郑州</a></li>
+            <li><a href="monthdata.php?city=南京">南京</a></li>
+            <li><a href="monthdata.php?city=武汉">武汉</a></li>
+            <li><a href="monthdata.php?city=合肥">合肥</a></li>
+            <li><a href="monthdata.php?city=福州">福州</a></li>
+            <li><a href="monthdata.php?city=南昌">南昌</a></li>
+            <li><a href="monthdata.php?city=长沙">长沙</a></li>
+            <li><a href="monthdata.php?city=贵阳">贵阳</a></li>
+            <li><a href="monthdata.php?city=成都">成都</a></li>
+            <li><a href="monthdata.php?city=广州">广州</a></li>
+            <li><a href="monthdata.php?city=昆明">昆明</a></li>
+            <li><a href="monthdata.php?city=南宁">南宁</a></li>
+            <li><a href="monthdata.php?city=深圳">深圳</a></li>
+        </ul>
+      </div>
+     </div>
+
+     <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title" style="text-align:center">微信公众平台</h3>
+      </div>
+      <div style="padding:10px 10px 10px 10px">
+         <a href="weixin.php"><img src="https://www.zq12369.com/resource/img/health/weixin/zhenqiweixin.jpg" width="100%" alt="真气环保二维码"></a>
+      </div>
+     </div>
+
+  </div>
+  </div>
+  
+<br>
+<hr style="margin-bottom:5px">
+<div class="container">
+	<div class="row link">
+	    <div class="col-sm-6" style="padding:0px">
+		© 2013-2025 <a href="#" style="color:#333">aqistudy.cn</a> 版权所有 <a href="https://beian.miit.gov.cn" style="color:#333" target="_blank">浙ICP备15007754号-1</a> <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33011802001982" style="color:#333">浙公网安备33011802001982号</a>
+		<script src="https://hm.baidu.com/hm.js?6088e7f72f5a363447d4bafe03026db8"></script><script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?6088e7f72f5a363447d4bafe03026db8";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+		</div>
+
+    <div style="position: fixed; right: 5px; top:300px;text-align: center">
+      <img src="/historydata/resource/img/sxwxgroup.jpg?v=1.1" width="150px"><br>
+      欢迎扫描二维码体验<br>数象环保AI小助手
+    </div>
+		<div class="col-sm-6" style="text-align:right;padding:0px">
+		<a href="https://www.aqistudy.cn/" target="_blank">分析平台</a>|
+		<a href="https://www.aqistudy.cn/historydata/">历史数据</a>|
+		<a href="https://www.zq12369.com/" target="_blank" style="display: none">真气网</a>|
+    <a href="https://map.zq12369.com/" target="_blank">风场地图</a>|
+		<a href="weixin.php">微信平台</a>|
+		<a href="sponsor.php">友情赞助</a>|
+		<a href="about.php">关于平台</a>
+    <div style="display: none">
+      <a href="https://www.aichpoem.net" target="_blank">诗三百AI写诗</a>
+    </div>
+		</div>
+	</div>
+</div></div>
+<script type="text/javascript" src="resource/js/jquery.min.js?v=1.11"></script>
+<script type="text/javascript" src="resource/js/de5CQkNmdaJwo.min.js?t=1695882361"></script>
+<script type="text/javascript" src="resource/highcharts/highcharts.js"></script>
+<script type="text/javascript" src="resource/highcharts/highcharts-more.js"></script>
+<script type="text/javascript">
+
+
+eval(dqf3PsvG9U(`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`));
+
+
+eval(dU6tPALZ40l(`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`));
+
+
+</script>
+
+</body></html>
