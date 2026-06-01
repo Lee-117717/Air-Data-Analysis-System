@@ -1,0 +1,1 @@
+/home/hadoop/opt/app/anaconda3/bin/python /home/hadoop/opt/mypro/air_quality_spider/mySpiderCheck.py
